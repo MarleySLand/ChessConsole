@@ -1,4 +1,4 @@
-﻿using xadrezNoConsole.Tabuleiro;
+﻿using xadrezNoConsole.Entities.Tabuleiro;
 
 namespace xadrezNoConsole
 {
