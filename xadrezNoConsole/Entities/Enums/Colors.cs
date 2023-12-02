@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace xadrezNoConsole.Enums
+﻿namespace xadrezNoConsole.Enums
 {
-    internal class Colors
+    enum Colors
     {
+        Black,
+        White,
+        Orange,
+        Yellow,
+        Blue,
+        Pink,
+        Purple,
     }
 }

@@ -1,4 +1,5 @@
-﻿using xadrezNoConsole.Entities.Tabuleiro;
+﻿using xadrezNoConsole.Entities;
+using xadrezNoConsole.Entities.Tabuleiro;
 
 namespace xadrezNoConsole
 {
@@ -6,9 +7,9 @@ namespace xadrezNoConsole
     {
         static void Main(string[] Args)
         {
-            Posicao p = new Posicao(3, 4);
-            
-            Console.WriteLine(p);
+            Tab tab = new Tab(8, 8);
+
+            Screen.WriteTab(tab);
         }
     }
 }
