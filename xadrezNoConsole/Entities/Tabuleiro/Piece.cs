@@ -9,11 +9,10 @@ namespace xadrezNoConsole.Entities.Tabuleiro
         public Tab Tab { get; protected set; }
         public int MovementsQuantity { get; protected set; }
 
-        public Piece(Position position, Colors color, Tab tab, int movementsQuantity)
+        public Piece(Position position, Colors color, Tab tab)
         {
             Position = position;
             Color = color;
-            MovementsQuantity = movementsQuantity;
             Tab = tab;
         }
     }

@@ -13,9 +13,15 @@
             _tab = new Piece [Lines, Columns];
         }
 
-        public Piece piece(int lines, int columns)
+        public Piece FindPiece(int lines, int columns)
         {
             return _tab[lines, columns];
+        }
+
+        public void Placepiece(Piece p, Position pos)
+        {
+            _tab[pos.Line, pos.Column] = p;
+            p.Position = pos;
         }
     }
 }

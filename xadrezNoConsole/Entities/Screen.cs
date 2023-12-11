@@ -10,12 +10,12 @@ namespace xadrezNoConsole.Entities
             {
                 for (int j = 0; j < tab.Columns; j++)
                 {
-                    if (tab.piece(i, j) == null)
+                    if (tab.FindPiece(i, j) == null)
                     {
                         Console.Write("- ");
                     } else
                     {
-                        Console.Write(tab.piece(i, j) + " ");
+                        Console.Write(tab.FindPiece(i, j) + " ");
                     }
                 }
                 Console.WriteLine();
