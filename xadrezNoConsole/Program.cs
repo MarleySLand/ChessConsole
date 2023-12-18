@@ -9,23 +9,32 @@ namespace xadrezNoConsole
     {
         static void Main(string[] Args)
         {
-            Tab tab = new Tab(8, 8);
+            try
+            {
 
-            // queens
-            tab.Placepiece(new Queen(new Position(0, 3), Colors.Black, tab), new Position(0, 3));
-            tab.Placepiece(new Queen(new Position(7, 4), Colors.Black, tab), new Position(7, 4));
+                Tab tab = new Tab(8, 8);
 
-            // kings
-            tab.Placepiece(new King(new Position(0, 4), Colors.Black, tab), new Position(0,4));
-            tab.Placepiece(new King(new Position(7, 3), Colors.Black, tab), new Position(7, 3));
+                // queens
+                tab.Placepiece(new Queen(new Position(0, 3), Colors.Black, tab), new Position(0, 3));
+                tab.Placepiece(new Queen(new Position(7, 4), Colors.Black, tab), new Position(7, 4));
 
-            // towers
-            tab.Placepiece(new Tower(new Position(0, 0), Colors.Black, tab), new Position(0, 0));
-            tab.Placepiece(new Tower(new Position(0, 7), Colors.Black, tab), new Position(0, 7));
-            tab.Placepiece(new Tower(new Position(7, 0), Colors.Black, tab), new Position(7, 0));
-            tab.Placepiece(new Tower(new Position(7, 7), Colors.Black, tab), new Position(7, 7));
+                // kings
+                tab.Placepiece(new King(new Position(0, 4), Colors.Black, tab), new Position(0, 4));
+                tab.Placepiece(new King(new Position(7, 3), Colors.Black, tab), new Position(7, 3));
 
-            Screen.WriteTab(tab);
+                // towers
+                tab.Placepiece(new Tower(new Position(0, 0), Colors.Black, tab), new Position(0, 0));
+                tab.Placepiece(new Tower(new Position(0, 7), Colors.Black, tab), new Position(0, 7));
+                tab.Placepiece(new Tower(new Position(7, 0), Colors.Black, tab), new Position(7, 0));
+                tab.Placepiece(new Tower(new Position(7, 7), Colors.Black, tab), new Position(7, 7));
+
+                tab.Placepiece(new King(new Position(9, 3), Colors.Black, tab), new Position(9, 3));
+
+                Screen.WriteTab(tab);
+            } catch (TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
