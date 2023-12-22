@@ -14,21 +14,10 @@ namespace xadrezNoConsole
 
                 Tab tab = new Tab(8, 8);
 
-                // queens
-                tab.Placepiece(new Queen(new Position(0, 3), Colors.Black, tab), new Position(0, 3));
-                tab.Placepiece(new Queen(new Position(7, 4), Colors.Black, tab), new Position(7, 4));
+                ChessPosition chsPos = new ChessPosition('c', 7);
 
-                // kings
-                tab.Placepiece(new King(new Position(0, 4), Colors.Black, tab), new Position(0, 4));
-                tab.Placepiece(new King(new Position(7, 3), Colors.Black, tab), new Position(7, 3));
-
-                // towers
-                tab.Placepiece(new Tower(new Position(0, 0), Colors.Black, tab), new Position(0, 0));
-                tab.Placepiece(new Tower(new Position(0, 7), Colors.Black, tab), new Position(0, 7));
-                tab.Placepiece(new Tower(new Position(7, 0), Colors.Black, tab), new Position(7, 0));
-                tab.Placepiece(new Tower(new Position(7, 7), Colors.Black, tab), new Position(7, 7));
-
-                tab.Placepiece(new King(new Position(9, 3), Colors.Black, tab), new Position(9, 3));
+                Console.WriteLine(chsPos);
+                Console.WriteLine(chsPos.ToPosition());
 
                 Screen.WriteTab(tab);
             } catch (TabuleiroException e)
