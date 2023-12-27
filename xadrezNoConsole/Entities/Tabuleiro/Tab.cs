@@ -55,5 +55,17 @@
             _tab[pos.Line, pos.Column] = p;
             p.Position = pos;
         }
+
+        public Piece RemovePiece(Position pos)
+        {
+            if (FindPiece(pos) == null)
+            {
+                return null;
+            }
+            Piece aux = FindPiece(pos);
+            aux.Position = null;
+            _tab[pos.Line, pos.Column] = null;
+            return aux;
+        }
     }
 }

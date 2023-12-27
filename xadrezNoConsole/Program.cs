@@ -12,12 +12,21 @@ namespace xadrezNoConsole
             try
             {
 
-                Tab tab = new Tab(8, 8);
+                ChessGame chessgame = new ChessGame();
 
-                tab.Placepiece(new Tower(new Position(0, 0), Colors.White, tab), new Position(0, 0));
-                tab.Placepiece(new King(new Position(2, 5), Colors.Black, tab), new Position(2, 5));
+                while (!chessgame.Ended) {
 
-                Screen.WriteTab(tab);
+                    Console.Clear();
+                    Screen.WriteTab(chessgame.Tab);
+                    Console.WriteLine();
+                    Console.Write("Origin: ");
+                    Position origin = Screen.ReadPiece().ToPosition();
+                    Console.Write("Destiny: ");
+                    Position destiny = Screen.ReadPiece().ToPosition();
+
+                    chessgame.MovementExe(origin, destiny);
+                }
+                
             } catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);

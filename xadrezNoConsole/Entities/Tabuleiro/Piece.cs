@@ -15,5 +15,10 @@ namespace xadrezNoConsole.Entities.Tabuleiro
             Color = color;
             Tab = tab;
         }
+
+        public void MovementsIncrement()
+        {
+            MovementsQuantity++;
+        }
     }
 }
