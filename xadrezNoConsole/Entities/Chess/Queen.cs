@@ -10,6 +10,12 @@ namespace xadrezNoConsole.Entities.Chess
         {
         }
 
+        public override bool[,] PossibleMovements()
+        {
+            bool[,] mat = new bool[Tab.Lines, Tab.Columns];
+            return mat;
+        }
+
         public override string ToString()
         {
             return "Q";

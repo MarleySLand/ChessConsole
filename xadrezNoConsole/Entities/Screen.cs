@@ -12,14 +12,32 @@ namespace xadrezNoConsole.Entities
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tab.Columns; j++)
                 {
-                    if (tab.FindPiece(i, j) == null)
+                    PrintPiece(tab.FindPiece(i, j));
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("  a b c d e f g h");
+        }
+
+        public static void WriteTab(Tab tab, bool[,] possiblePositions)
+        {
+            ConsoleColor originalBackground = Console.BackgroundColor;
+            ConsoleColor changedBackground = ConsoleColor.DarkGray;
+            
+            for (int i = 0; i < tab.Lines; i++)
+            {
+                Console.Write(8 - i + " ");
+                for (int j = 0; j < tab.Columns; j++)
+                {
+                    if (possiblePositions[i, j])
                     {
-                        Console.Write("- ");
+                        Console.BackgroundColor = changedBackground;
                     } else
                     {
-                        PrintPiece(tab.FindPiece(i, j));
-                        Console.Write(" ");
+                        Console.BackgroundColor = originalBackground;
                     }
+                    PrintPiece(tab.FindPiece(i, j));
+                    Console.BackgroundColor = originalBackground;
                 }
                 Console.WriteLine();
             }
@@ -36,15 +54,24 @@ namespace xadrezNoConsole.Entities
 
         public static void PrintPiece(Piece piece)
         {
-            if (piece.Color == Enums.Colors.White)
+            if (piece == null)
             {
-                Console.Write(piece);
-            } else
+                Console.Write("- ");
+            }
+            else
             {
-                ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(piece);
-                Console.ForegroundColor = aux;
+                if (piece.Color == Enums.Colors.White)
+                {
+                    Console.Write(piece);
+                }
+                else
+                {
+                    ConsoleColor aux = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(piece);
+                    Console.ForegroundColor = aux;
+                }
+                Console.Write(" ");
             }
         }
     }

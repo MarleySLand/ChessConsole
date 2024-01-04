@@ -31,8 +31,10 @@ namespace xadrezNoConsole.Entities.Chess
         {
             Tab.Placepiece(new King(new ChessPosition('d', 1).ToPosition(), Colors.White, Tab), new ChessPosition('d', 1).ToPosition());
             Tab.Placepiece(new King(new ChessPosition('e', 8).ToPosition(), Colors.Black, Tab), new ChessPosition('e', 8).ToPosition());
-            Tab.Placepiece(new Queen(new ChessPosition('e', 1).ToPosition(), Colors.White, Tab), new ChessPosition('e', 1).ToPosition());
-            Tab.Placepiece(new Queen(new ChessPosition('d', 8).ToPosition(), Colors.Black, Tab), new ChessPosition('d', 8).ToPosition());
+            Tab.Placepiece(new Tower(new ChessPosition('a', 1).ToPosition(), Colors.White, Tab), new ChessPosition('a', 1).ToPosition());
+            Tab.Placepiece(new Tower(new ChessPosition('a', 8).ToPosition(), Colors.White, Tab), new ChessPosition('h', 1).ToPosition());
+            Tab.Placepiece(new Tower(new ChessPosition('a', 1).ToPosition(), Colors.Black, Tab), new ChessPosition('a', 8).ToPosition());
+            Tab.Placepiece(new Tower(new ChessPosition('a', 1).ToPosition(), Colors.Black, Tab), new ChessPosition('h', 8).ToPosition());
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace xadrezNoConsole.Entities.Tabuleiro
 {
-    class Piece
+    abstract class Piece
     {
         public Position Position { get; set; }
         public Colors Color { get; protected set; }
@@ -15,6 +15,8 @@ namespace xadrezNoConsole.Entities.Tabuleiro
             Color = color;
             Tab = tab;
         }
+
+        public abstract bool[,] PossibleMovements();
 
         public void MovementsIncrement()
         {
